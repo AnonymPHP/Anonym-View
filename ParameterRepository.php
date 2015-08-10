@@ -36,6 +36,19 @@ class ParameterRepository
     }
 
     /**
+     * Parametrelere bir tane ekler
+     *
+     * @param string $name
+     * @param $value
+     * @return $this
+     */
+    public function addParameter($name = '', $value)
+    {
+        $this->params[$name] = $value;
+        return $this;
+    }
+
+    /**
      * @return array
      */
     public function getParams()
