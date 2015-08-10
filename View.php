@@ -14,7 +14,7 @@ namespace Anonym\Components\View;
  * Class View
  * @package Anonym\Components\View
  */
-class View implements ContentRepositoryInterface
+class View implements ContentRepositoryInterface, ViewAssignInterface
 {
 
     use FilePathGenerator;
@@ -159,5 +159,52 @@ class View implements ContentRepositoryInterface
     public function getContent()
     {
         return $this->getContentRepository()->getContent();
+    }
+
+    /**
+     * Yeni bir item ekler
+     *
+     * @param string $fileName
+     * @return $this
+     */
+    protected function addFile($fileName = '')
+    {
+        $this->getNameRepository()->addName($fileName);
+        return $this;
+    }
+
+    /**
+     * Yeni veri ataması yapar
+     *
+     * @param string $name Veri ismi
+     * @param mixed $value Veriye atanacak değer
+     * @return mixed
+     */
+    public function assign($name = '', $value)
+    {
+        $this->getParamsRepository()->addParameter($name, $value);
+        return $this;
+    }
+
+    /**
+     * Verileri gönderir
+     *
+     * @param array $params
+     * @return $this
+     */
+    public function setParams(array $params = [])
+    {
+        $this->getParamsRepository()->setParams($params);
+        return $this;
+    }
+
+    /**
+     * Değerleri döndürür
+     *
+     * @return array
+     */
+    public function getParams()
+    {
+        return $this->getParamsRepository()->getParams();
     }
 }
