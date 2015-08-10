@@ -29,9 +29,7 @@ interface ViewInterface
     /**
      * Çıktıyı postolar
      *
-     * @param string $name Çıktılanacak gönderinin adı
-     * @param array $params Tasarım a yollanacak değerler
      * @return mixed
      */
-    public function execute($name = '', array $params = []);
+    public function execute();
 }
