@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Anonym\\Components\\View\\": "src/Anonym/Components/"
+      "Anonym\\Components\\View\\": ""
     }
   },
   "extra": {

@@ -10,7 +10,10 @@
 
 namespace Anonym\Components\View;
 
-
+/**
+ * Class View
+ * @package Anonym\Components\View
+ */
 class View
 {
 
