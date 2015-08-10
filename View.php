@@ -134,4 +134,14 @@ class View extends Response implements ViewInterface
         $root = $this->getRootDir();
         return $root.DIRECTORY_SEPARATOR.$name.'.php';
     }
+
+    /**
+     * Çıktıyı postolar
+     *
+     * @return mixed
+     */
+    public function execute()
+    {
+        // this class do nothing
+    }
 }
