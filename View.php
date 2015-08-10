@@ -42,6 +42,10 @@ class View extends Response
      */
     private $configRepository;
 
+    /**
+     * Sınıfı başlatır ve atamaları yapar
+     *
+     */
     public function __construct()
     {
         $this->setConfigRepository( new ConfigRepository());

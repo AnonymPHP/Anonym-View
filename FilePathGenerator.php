@@ -24,7 +24,7 @@ trait FilePathGenerator
      * @param ConfigRepository $configRepository
      * @return array
      */
-    protected  function generate(FileNameRepository $fileNameRepository, ConfigRepository $configRepository)
+    protected  function generateFilePaths(FileNameRepository $fileNameRepository, ConfigRepository $configRepository)
     {
         $names = $fileNameRepository->getNames();
         $rootDir = $configRepository->getRootDir();
