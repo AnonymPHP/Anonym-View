@@ -17,6 +17,13 @@ namespace Anonym\Components\View;
 trait FilePathGenerator
 {
 
+    /**
+     * Dosyaların yollarını oluşturur
+     *
+     * @param FileNameRepository $fileNameRepository
+     * @param ConfigRepository $configRepository
+     * @return array
+     */
     protected  function generate(FileNameRepository $fileNameRepository, ConfigRepository $configRepository)
     {
         $names = $fileNameRepository->getNames();

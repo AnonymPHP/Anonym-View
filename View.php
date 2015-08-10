@@ -18,6 +18,8 @@ use Anonym\Components\HttpClient\Response;
 class View extends Response
 {
 
+    use FilePathGenerator;
+
     /**
      *Parametreleri depolar
      *
