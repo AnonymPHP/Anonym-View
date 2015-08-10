@@ -10,13 +10,8 @@
 
 namespace Anonym\Components\View;
 
-/**
- * Trait FilePathGenerator
- * @package Anonym\Components\View
- */
-trait FilePathGenerator
+
+class ConfigRepository
 {
-
-
 
 }
