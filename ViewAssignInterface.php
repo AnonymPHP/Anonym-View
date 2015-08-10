@@ -26,10 +26,4 @@ interface ViewInterface
      */
     public function assign($name = '', $value);
 
-    /**
-     * Çıktıyı postolar
-     *
-     * @return mixed
-     */
-    public function execute();
 }
