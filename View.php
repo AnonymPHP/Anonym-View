@@ -9,7 +9,6 @@
 
 
 namespace Anonym\Components\View;
-use Anonym\Components\HttpClient\Response;
 
 /**
  * Class View

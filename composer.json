@@ -15,8 +15,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "php": ">=5.4",
-    "anonym-php/anonym-httpclient" : "~1.2@dev"
+    "php": ">=5.4"
   },
   "autoload": {
     "psr-4": {
