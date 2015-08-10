@@ -14,7 +14,7 @@ namespace Anonym\Components\View;
  * Interface ViewInterface
  * @package Anonym\Components\View
  */
-interface ViewInterface
+interface ViewAssignInterface
 {
 
     /**

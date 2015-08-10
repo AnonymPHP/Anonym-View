@@ -15,7 +15,7 @@ use Anonym\Components\HttpClient\Response;
  * Class View
  * @package Anonym\Components\View
  */
-class View extends Response
+class View extends Response implements ViewExecuteInterface
 {
 
     use FilePathGenerator;
@@ -106,5 +106,21 @@ class View extends Response
     {
         $this->nameRepository = $nameRepository;
         return $this;
+    }
+
+    /**
+     * Çıktıyı postolar
+     *
+     * @param string $content Postalanacak içerik
+     * @return mixed
+     */
+    public function execute($content = '')
+    {
+
+        if(!is_string($content))
+        {
+
+        }
+
     }
 }
