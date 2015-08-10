@@ -23,14 +23,14 @@ class ConfigRepository
      *
      * @var string
      */
-    private $rootDir;
+    private $rootDir = VIEW;
 
     /**
      *Dosyanın uzantı tipini tutar
      *
      * @var string
      */
-    private $fileExtension;
+    private $fileExtension = '.php';
 
     /**
      * @return string

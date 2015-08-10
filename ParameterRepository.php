@@ -23,7 +23,7 @@ class ParameterRepository
      *
      * @var array
      */
-    private $params;
+    private $params = [];
 
     /**
      * Sınıfı başlatır ve değerleri hapseder
