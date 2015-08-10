@@ -18,4 +18,14 @@ use Exception;
 class ContentMustBeStringException extends Exception
 {
 
+    /**
+     * İçeriği gönderir
+     *
+     * @param string $message
+     */
+    public function __construct($message = '')
+    {
+        $this->message = $message;
+    }
+
 }
