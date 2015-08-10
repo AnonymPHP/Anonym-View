@@ -9,12 +9,13 @@
 
 
 namespace Anonym\Components\View;
+use Anonym\Components\HttpClient\Response;
 
 /**
  * Class View
  * @package Anonym\Components\View
  */
-class View implements ViewInterface
+class View extends Response implements ViewInterface
 {
 
     /**
@@ -132,22 +133,5 @@ class View implements ViewInterface
     {
         $root = $this->getRootDir();
         return $root.DIRECTORY_SEPARATOR.$name.'.php';
-    }
-
-    /**
-     * Çıktıyı postolar
-     *
-     * @return mixed
-     */
-    public function execute()
-    {
-        $name = $this->getViewName( $this->getName());
-
-        if(file_exists($name))
-        {
-
-        }else{
-
-        }
     }
 }
