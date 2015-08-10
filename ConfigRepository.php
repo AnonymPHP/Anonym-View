@@ -50,5 +50,23 @@ class ConfigRepository
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function getFileExtension()
+    {
+        return $this->fileExtension;
+    }
+
+    /**
+     * @param string $fileExtension
+     * @return ConfigRepository
+     */
+    public function setFileExtension($fileExtension)
+    {
+        $this->fileExtension = $fileExtension;
+        return $this;
+    }
+
 }
 
