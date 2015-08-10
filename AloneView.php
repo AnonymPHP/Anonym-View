@@ -10,12 +10,8 @@
 
 namespace Anonym\Components\View;
 
-/**
- * Class PhpView
- * @package Anonym\Components\View
- */
-class PhpView extends View
-{
 
+class AloneView
+{
 
 }
