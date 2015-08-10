@@ -10,8 +10,46 @@
 
 namespace Anonym\Components\View;
 
-
+/**
+ * Class ParameterRepository
+ * @package Anonym\Components\View
+ */
 class ParameterRepository
 {
 
+    /**
+     * Kullanılacak parametreleri tutar
+     *
+     *
+     * @var array
+     */
+    private $params;
+
+    /**
+     * Sınıfı başlatır ve değerleri hapseder
+     *
+     * @param array $params
+     */
+    public function __construct(array $params = [])
+    {
+        $this->setParams($params);
+    }
+
+    /**
+     * @return array
+     */
+    public function getParams()
+    {
+        return $this->params;
+    }
+
+    /**
+     * @param array $params
+     * @return ParameterRepository
+     */
+    public function setParams($params)
+    {
+        $this->params = $params;
+        return $this;
+    }
 }
