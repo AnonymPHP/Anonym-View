@@ -15,7 +15,7 @@ use Anonym\Components\HttpClient\Response;
  * Class View
  * @package Anonym\Components\View
  */
-class View extends Response implements ViewExecuteInterface
+class View
 {
 
     use FilePathGenerator;
@@ -112,14 +112,14 @@ class View extends Response implements ViewExecuteInterface
      * Çıktıyı postolar
      *
      * @param string $content Postalanacak içerik
+     * @throws ContentMustBeStringException
      * @return mixed
      */
-    public function execute($content = '')
+    public function setContent($content = '')
     {
-
         if(!is_string($content))
         {
-
+            throw new ContentMustBeStringException('Gönderilecek içerik mutlaka string olmalıdır');
         }
 
     }
