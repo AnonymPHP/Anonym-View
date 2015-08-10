@@ -9,14 +9,9 @@
 
 
 namespace Anonym\Components\View;
-use Anonym\Components\HttpClient\Response;
 
-/**
- * Class View
- * @package Anonym\Components\View
- */
-class View extends Response
+
+class FileNameRepository
 {
-
 
 }
