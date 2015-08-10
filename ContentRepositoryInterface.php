@@ -10,8 +10,18 @@
 
 namespace Anonym\Components\View;
 
-
+/**
+ * Interface ContentRepositoryInterface
+ * @package Anonym\Components\View
+ */
 interface ContentRepositoryInterface
 {
+
+    /**
+     * İçeriği döndürür
+     *
+     * @return string
+     */
+    public function getContent();
 
 }
