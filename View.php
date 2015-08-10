@@ -14,7 +14,7 @@ namespace Anonym\Components\View;
  * Class View
  * @package Anonym\Components\View
  */
-class View
+class View implements ContentRepositoryInterface
 {
 
     use FilePathGenerator;
@@ -135,13 +135,13 @@ class View
 
 
     /**
-     * Çıktıyı postolar
+     * Postalanacak çıktıyı ayarlar
      *
      * @param string $content Postalanacak içerik
      * @throws ContentMustBeStringException
      * @return mixed
      */
-    public function setContent($content = '')
+    protected function setContent($content = '')
     {
         if(!is_string($content))
         {
