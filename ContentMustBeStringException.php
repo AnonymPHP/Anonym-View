@@ -9,9 +9,13 @@
 
 
 namespace Anonym\Components\View;
+use Exception;
 
-
-class ContentMustBeString
+/**
+ * Class ContentMustBeStringException
+ * @package Anonym\Components\View
+ */
+class ContentMustBeStringException extends Exception
 {
 
 }
