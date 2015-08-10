@@ -34,6 +34,39 @@ class View extends Response
     private $nameRepository;
 
     /**
+     *Ayarları tutacak objeyi depolar
+     *
+     * @var ConfigRepository
+     */
+    private $configRepository;
+
+    public function __construct()
+    {
+        $this->setConfigRepository( new ConfigRepository());
+        $this->setNameRepository( new FileNameRepository());
+        $this->setParamsRepository( new ParameterRepository());
+    }
+
+    /**
+     * @return ConfigRepository
+     */
+    public function getConfigRepository()
+    {
+        return $this->configRepository;
+    }
+
+    /**
+     * @param ConfigRepository $configRepository
+     * @return View
+     */
+    public function setConfigRepository(ConfigRepository $configRepository)
+    {
+        $this->configRepository = $configRepository;
+        return $this;
+    }
+
+
+    /**
      * @return ParameterRepository
      */
     public function getParamsRepository()

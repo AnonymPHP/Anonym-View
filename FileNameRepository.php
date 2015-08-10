@@ -23,7 +23,7 @@ class FileNameRepository
      *
      * @var array
      */
-    private $names;
+    private $names = [];
 
     /**
      * Sınıfı başlatır ve dosya isimleri atar

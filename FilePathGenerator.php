@@ -17,6 +17,19 @@ namespace Anonym\Components\View;
 trait FilePathGenerator
 {
 
+    protected  function generate(FileNameRepository $fileNameRepository, ConfigRepository $configRepository)
+    {
+        $names = $fileNameRepository->getNames();
+        $rootDir = $configRepository->getRootDir();
+        $extension = $configRepository->getFileExtension();
 
+        $paths = [];
 
+        foreach($names as $name)
+        {
+
+        }
+
+    }
 }
+
