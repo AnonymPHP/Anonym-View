@@ -161,17 +161,6 @@ class View implements ContentRepositoryInterface, ViewAssignInterface
         return $this->getContentRepository()->getContent();
     }
 
-    /**
-     * Yeni bir item ekler
-     *
-     * @param string $fileName
-     * @return $this
-     */
-    protected function addFile($fileName = '')
-    {
-        $this->getNameRepository()->addName($fileName);
-        return $this;
-    }
 
     /**
      * Yeni veri ataması yapar
