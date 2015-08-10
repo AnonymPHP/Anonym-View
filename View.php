@@ -18,5 +18,12 @@ use Anonym\Components\HttpClient\Response;
 class View extends Response
 {
 
+    /**
+     *Parametreleri depolar
+     *
+     *
+     * @var ParameterRepository
+     */
+    private $paramsRepository;
 
 }
