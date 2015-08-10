@@ -1,6 +1,6 @@
 <?php
 /**
- * Bu Dosya AnonymFramework'e ait bir dosyad�r.
+ * Bu Dosya AnonymFramework'e ait bir dosyadır.
  *
  * @author vahitserifsaglam <vahit.serif119@gmail.com>
  * @see http://gemframework.com
@@ -16,5 +16,13 @@ namespace Anonym\Components\View;
  */
 class View
 {
+
+    /**
+     * Tasarıma gönderilecek değerleri tutar
+     *
+     *
+     * @var  array-> params
+     */
+    private $params;
 
 }

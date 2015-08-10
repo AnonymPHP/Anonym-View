@@ -1,6 +1,6 @@
 <?php
 /**
- * Bu Dosya AnonymFramework'e ait bir dosyadır.
+ * Bu Dosya AnonymFramework'e ait bir dosyadÄ±r.
  *
  * @author vahitserifsaglam <vahit.serif119@gmail.com>
  * @see http://gemframework.com
@@ -18,19 +18,19 @@ interface ViewInterface
 {
 
     /**
-     * Yeni veri ataması yapar
+     * Yeni veri atamasÄ± yapar
      *
      * @param string $name Veri ismi
-     * @param mixed $value Veriye atanacak değer
+     * @param mixed $value Veriye atanacak deÄŸer
      * @return mixed
      */
     public function assign($name = '', $value);
 
     /**
-     * Çıktıyı postolar
+     * Ã‡Ä±ktÄ±yÄ± postolar
      *
-     * @param string $name Çıktılanacak gönderinin adı
-     * @param array $params Tasarım a yollanacak değerler
+     * @param string $name Ã‡Ä±ktÄ±lanacak gÃ¶nderinin adÄ±
+     * @param array $params TasarÄ±m a yollanacak deÄŸerler
      * @return mixed
      */
     public function execute($name = '', array $params = []);
