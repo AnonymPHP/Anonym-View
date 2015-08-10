@@ -42,6 +42,14 @@ class View
     private $configRepository;
 
     /**
+     *İçeriği depolayacak objeyi tutar
+     *
+     *
+     * @var ContentRepository
+     */
+    private $contentRepository;
+
+    /**
      * Sınıfı başlatır ve atamaları yapar
      *
      */
@@ -108,6 +116,25 @@ class View
     }
 
     /**
+     * @return ContentRepository
+     */
+    public function getContentRepository()
+    {
+        return $this->contentRepository;
+    }
+
+    /**
+     * @param ContentRepository $contentRepository
+     * @return View
+     */
+    public function setContentRepository(ContentRepository $contentRepository)
+    {
+        $this->contentRepository = $contentRepository;
+        return $this;
+    }
+
+
+    /**
      * Çıktıyı postolar
      *
      * @param string $content Postalanacak içerik
@@ -121,5 +148,16 @@ class View
             throw new ContentMustBeStringException('Gönderilecek içerik mutlaka string olmalıdır');
         }
 
+        $this->getContentRepository()->setContent($content);
+    }
+
+    /**
+     * İçeriği döndürür
+     *
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->getContentRepository()->getContent();
     }
 }
