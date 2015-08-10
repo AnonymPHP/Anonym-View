@@ -27,7 +27,7 @@ trait FilePathGenerator
 
         foreach($names as $name)
         {
-             $paths[] = $rootDir.$paths.$extension;
+             $paths[] = $rootDir.$name.$extension;
         }
 
         return $paths;
