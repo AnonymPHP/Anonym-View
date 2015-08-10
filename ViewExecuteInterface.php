@@ -10,7 +10,10 @@
 
 namespace Anonym\Components\View;
 
-
+/**
+ * Interface ViewExecuteInterface
+ * @package Anonym\Components\View
+ */
 interface ViewExecuteInterface
 {
 
