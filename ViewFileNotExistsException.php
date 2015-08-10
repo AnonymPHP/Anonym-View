@@ -9,9 +9,23 @@
 
 
 namespace Anonym\Components\View;
+use Exception;
 
-
-class ViewFileNotExistsException
+/**
+ * Class ViewFileNotExistsException
+ * @package Anonym\Components\View
+ */
+class ViewFileNotExistsException extends Exception
 {
+
+    /**
+     * İstisnayı oluşturur
+     *
+     * @param string $message
+     */
+    public function __construct($message = '')
+    {
+        $this->message = $message;
+    }
 
 }
