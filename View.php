@@ -14,7 +14,7 @@ namespace Anonym\Components\View;
  * Class View
  * @package Anonym\Components\View
  */
-class View implements ContentRepositoryInterface, ViewAssignInterface
+class View
 {
 
     use FilePathGenerator;
@@ -134,66 +134,6 @@ class View implements ContentRepositoryInterface, ViewAssignInterface
     }
 
 
-    /**
-     * Postalanacak çıktıyı ayarlar
-     *
-     * @param string $content Postalanacak içerik
-     * @throws ContentMustBeStringException
-     * @return mixed
-     */
-    protected function setContent($content = '')
-    {
-        if(!is_string($content))
-        {
-            throw new ContentMustBeStringException('Gönderilecek içerik mutlaka string olmalıdır');
-        }
-
-        $this->getContentRepository()->setContent($content);
-    }
-
-    /**
-     * İçeriği döndürür
-     *
-     * @return string
-     */
-    public function getContent()
-    {
-        return $this->getContentRepository()->getContent();
-    }
 
 
-    /**
-     * Yeni veri ataması yapar
-     *
-     * @param string $name Veri ismi
-     * @param mixed $value Veriye atanacak değer
-     * @return mixed
-     */
-    public function assign($name = '', $value)
-    {
-        $this->getParamsRepository()->addParameter($name, $value);
-        return $this;
-    }
-
-    /**
-     * Verileri gönderir
-     *
-     * @param array $params
-     * @return $this
-     */
-    public function setParams(array $params = [])
-    {
-        $this->getParamsRepository()->setParams($params);
-        return $this;
-    }
-
-    /**
-     * Değerleri döndürür
-     *
-     * @return array
-     */
-    public function getParams()
-    {
-        return $this->getParamsRepository()->getParams();
-    }
 }
