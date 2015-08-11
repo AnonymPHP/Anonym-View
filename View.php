@@ -29,6 +29,13 @@ class View extends RepositoryManager
         $this->setDefaultVars();
     }
 
+    /**
+     * Sürücü seçimi yapar
+     *
+     * @param null $driver
+     * @return Driver
+     * @throws DriverException
+     */
     public function driver($driver  = null)
     {
 
@@ -47,7 +54,7 @@ class View extends RepositoryManager
             {
                 return  $driver;
             }else{
-
+                throw new DriverException(sprintf('%s sınıfınız geçerli bir sürücü değil', get_class($driver)));
             }
 
         }
