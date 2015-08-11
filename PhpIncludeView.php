@@ -17,4 +17,36 @@ namespace Anonym\Components\View;
 class PhpIncludeView extends View implements ViewExecuteInterface
 {
 
+    /**
+     * Sınıfı başlatır
+     *
+     * @param string $fileName
+     * @param array $configs
+     */
+    public function __construct($fileName = '', array $configs = [])
+    {
+        $this->useConfigs($configs, $fileName);
+    }
+
+
+    /**
+     * Çıktıyı postalar
+     *
+     * @return string
+     */
+    public function execute()
+    {
+        $files = $this->getFiles();
+
+        if (count($files)) {
+            extract($this->getParameters());
+            foreach ($files as $file) {
+
+                include $file;
+            }
+        }
+
+        return ob_get_clean();
+
+    }
 }

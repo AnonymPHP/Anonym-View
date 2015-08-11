@@ -14,7 +14,7 @@ namespace Anonym\Components\View;
  * Class View
  * @package Anonym\Components\View
  */
-class View extends RepositoryManager implements ViewAssignInterface, ViewExecuteInterface
+class View extends RepositoryManager implements ViewAssignInterface
 {
 
     /**
@@ -48,12 +48,26 @@ class View extends RepositoryManager implements ViewAssignInterface, ViewExecute
     }
 
     /**
-     * Çıktıyı postolar
+     * Ayaları kullanır
      *
-     * @return mixed
+     * @param array $configs
+     * @param string $file
      */
-    public function execute()
+    protected function useConfigsWithMasters($configs, $file)
     {
-        // we do nothing
+        $this->setConfigs($configs);
+        if (isset($configs['header'])) {
+            $master = $configs['header'];
+        }
+        $master[] = $file;
+
+        if (isset($configs['footer'])) {
+            $master = array_merge($master, $configs['footer']);
+        }
+
+        $this->setFiles($master);
     }
+
 }
+
+
