@@ -18,55 +18,41 @@ class ConfigRepository
 {
 
     /**
-     *Dosyaların tutulacağı yolu tutar
+     *Ayarları tutar
      *
-     *
-     * @var string
+     * @var array
      */
-    private $rootDir = VIEW;
+    private $configs = [];
 
     /**
-     *Dosyanın uzantı tipini tutar
+     * Sınıfı başlatır ve ayarlamaları yapar
      *
-     * @var string
+     * @param array $configs
      */
-    private $fileExtension = '.php';
-
-    /**
-     * @return string
-     */
-    public function getRootDir()
+    public function __construct(array $configs = [])
     {
-        return $this->rootDir;
+        $this->setConfigs($configs);
     }
 
     /**
-     * @param string $rootDir
+     * @return array
+     */
+    public function getConfigs()
+    {
+        return $this->configs;
+    }
+
+    /**
+     * @param array $configs
      * @return ConfigRepository
      */
-    public function setRootDir($rootDir)
+    public function setConfigs(array $configs)
     {
-        $this->rootDir = $rootDir;
+        $this->configs = $configs;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFileExtension()
-    {
-        return $this->fileExtension;
-    }
 
-    /**
-     * @param string $fileExtension
-     * @return ConfigRepository
-     */
-    public function setFileExtension($fileExtension)
-    {
-        $this->fileExtension = $fileExtension;
-        return $this;
-    }
 
 }
 

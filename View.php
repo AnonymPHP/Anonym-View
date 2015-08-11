@@ -17,7 +17,7 @@ namespace Anonym\Components\View;
 class View extends RepositoryManager
 {
 
-    use FilePathGenerator;
+    use FilePathGenerator, DriverManager;
 
 
     /**
@@ -29,5 +29,24 @@ class View extends RepositoryManager
         $this->setDefaultVars();
     }
 
+    public function driver($driver  = null)
+    {
+
+        if (is_string($driver)) {
+
+            $list = $this->getDriverList();
+            if (isset($list[$driver])) {
+                $driver = $list[$driver];
+                $driver = new $driver;
+            }
+
+            if($driver instanceof Driver)
+            {
+
+            }
+
+        }
+
+    }
 
 }
