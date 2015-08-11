@@ -32,16 +32,21 @@ class View extends RepositoryManager
     public function driver($driver  = null)
     {
 
+        $configs = $this->getConfigRepository()->getConfigs();
+        $configs = isset($configs[$driver]) ? $configs[$driver] : [];
+
         if (is_string($driver)) {
 
             $list = $this->getDriverList();
             if (isset($list[$driver])) {
                 $driver = $list[$driver];
-                $driver = new $driver;
+                $driver = new $driver($configs);
             }
 
             if($driver instanceof Driver)
             {
+                return  $driver;
+            }else{
 
             }
 
