@@ -14,10 +14,10 @@ namespace Anonym\Components\View;
  * Class View
  * @package Anonym\Components\View
  */
-class View extends RepositoryManager
+class View
 {
 
-    use FilePathGenerator, DriverManager;
+    use DriverManager;
 
 
     /**
@@ -26,7 +26,6 @@ class View extends RepositoryManager
      */
     public function __construct()
     {
-        $this->setDefaultVars();
     }
 
     /**
@@ -36,11 +35,8 @@ class View extends RepositoryManager
      * @return Driver
      * @throws DriverException
      */
-    public function driver($driver  = null)
+    public function driver($driver = null, array $configs = [])
     {
-
-        $configs = $this->getConfigRepository()->getConfigs();
-        $configs = isset($configs[$driver]) ? $configs[$driver] : [];
 
         if (is_string($driver)) {
 
