@@ -31,12 +31,6 @@ class RepositoryManager
      */
     private $nameRepository;
 
-    /**
-     *Ayarları tutacak objeyi depolar
-     *
-     * @var ConfigRepository
-     */
-    private $configRepository;
 
     /**
      *İçeriği depolayacak objeyi tutar
@@ -45,26 +39,6 @@ class RepositoryManager
      * @var ContentRepository
      */
     private $contentRepository;
-
-
-    /**
-     * @return ConfigRepository
-     */
-    public function getConfigRepository()
-    {
-        return $this->configRepository;
-    }
-
-    /**
-     * @param ConfigRepository $configRepository
-     * @return View
-     */
-    public function setConfigRepository(ConfigRepository $configRepository)
-    {
-        $this->configRepository = $configRepository;
-        return $this;
-    }
-
 
     /**
      * @return ParameterRepository
