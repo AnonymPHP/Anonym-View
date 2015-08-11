@@ -10,8 +10,33 @@
 
 namespace Anonym\Components\View;
 
-
-class Driver
+/**
+ * Class Driver
+ * @package Anonym\Components\View
+ */
+class Driver extends RepositoryManager implements ViewAssignInterface, ViewExecuteInterface
 {
 
+    use FilePathGenerator;
+    /**
+     * Yeni veri ataması yapar
+     *
+     * @param string $name Veri ismi
+     * @param mixed $value Veriye atanacak değer
+     * @return mixed
+     */
+    public function assign($name = '', $value)
+    {
+
+    }
+
+    /**
+     * Çıktıyı postolar
+     *
+     * @return mixed
+     */
+    public function execute()
+    {
+        // TODO: Implement execute() method.
+    }
 }
