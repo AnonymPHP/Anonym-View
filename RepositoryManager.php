@@ -10,7 +10,10 @@
 
 namespace Anonym\Components\View;
 
-
+/**
+ * Class RepositoryManager
+ * @package Anonym\Components\View
+ */
 class RepositoryManager
 {
     /**
@@ -126,6 +129,4 @@ class RepositoryManager
         $this->setNameRepository( new FileNameRepository());
         $this->setParamsRepository( new ParameterRepository());
     }
-
 }
-

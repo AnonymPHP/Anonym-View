@@ -55,6 +55,17 @@ class Driver extends RepositoryManager implements ViewAssignInterface, ViewExecu
     }
 
     /**
+     * Parametreleri atar
+     *
+     * @param array $parameters
+     * @return $this
+     */
+    public function setParameters(array $parameters = [])
+    {
+        $this->getParamsRepository()->setParams($parameters);
+        return $this;
+    }
+    /**
      * Çıktıyı oluşturur
      *
      * @return string

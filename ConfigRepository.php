@@ -17,6 +17,7 @@ namespace Anonym\Components\View;
 class ConfigRepository
 {
 
+
     /**
      *Ayarları tutar
      *
