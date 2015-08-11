@@ -8,13 +8,15 @@
  */
 
 
-namespace Anonym\Components\View;
+namespace Anonym\Components\View\ViewDriver;
 
 /**
  * Class HeaderFooterDriver
  * @package Anonym\Components\View
  */
-class HeaderFooterViewDriver
+class HeaderFooterViewDriver extends Driver
 {
+
+
 
 }

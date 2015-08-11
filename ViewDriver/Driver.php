@@ -8,7 +8,7 @@
  */
 
 
-namespace Anonym\Components\View;
+namespace Anonym\Components\View\ViewDriver;
 
 
 class Driver extends View implements ContentRepositoryInterface, ViewAssignInterface

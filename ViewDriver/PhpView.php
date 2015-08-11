@@ -8,7 +8,7 @@
  */
 
 
-namespace Anonym\Components\View;
+namespace Anonym\Components\View\ViewDriver;
 
 /**
  * Class PhpView
