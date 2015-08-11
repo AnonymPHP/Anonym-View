@@ -16,91 +16,108 @@ namespace Anonym\Components\View;
  */
 class RepositoryManager
 {
-    /**
-     *Parametreleri depolar
-     *
-     *
-     * @var ParameterRepository
-     */
-    private $paramsRepository;
 
     /**
-     * Dosya isimlerini depolar
+     * Gönderilecek parametreleri tutar
      *
-     * @var FileNameRepository
+     * @var array
      */
-    private $nameRepository;
+    private $parameters = [];
+
+    /**
+     * Ayları tutar
+     *
+     * @var array
+     */
+    private $configs = [];
+
+    /**
+     * Dosya adlarını tutar
+     *
+     * @var array
+     */
+    private $files = [];
 
 
     /**
-     *İçeriği depolayacak objeyi tutar
-     *
-     *
-     * @var ContentRepository
+     * @return array
      */
-    private $contentRepository;
-
-    /**
-     * @return ParameterRepository
-     */
-    public function getParamsRepository()
+    public function getParameters()
     {
-        return $this->paramsRepository;
+        return $this->parameters;
     }
 
     /**
-     * @param ParameterRepository $paramsRepository
-     * @return View
+     * @param array $parameters
+     * @return RepositoryManager
      */
-    public function setParamsRepository(ParameterRepository $paramsRepository)
+    public function setParameters($parameters)
     {
-        $this->paramsRepository = $paramsRepository;
+        $this->parameters = $parameters;
         return $this;
     }
 
     /**
-     * @return FileNameRepository
+     * Yeni bir parametre ekler
+     *
+     * @param string $name
+     * @param mixed $value
+     * @return $this
      */
-    public function getNameRepository()
+    public function addParameter($name, $value)
     {
-        return $this->nameRepository;
-    }
-
-    /**
-     * @param FileNameRepository $nameRepository
-     * @return View
-     */
-    public function setNameRepository(FileNameRepository $nameRepository)
-    {
-        $this->nameRepository = $nameRepository;
+        $this->parameters[$name] = $value;
         return $this;
     }
 
     /**
-     * @return ContentRepository
+     * @return array
      */
-    public function getContentRepository()
+    public function getConfigs()
     {
-        return $this->contentRepository;
+        return $this->configs;
     }
 
     /**
-     * @param ContentRepository $contentRepository
-     * @return View
+     * @param array $configs
+     * @return RepositoryManager
      */
-    public function setContentRepository(ContentRepository $contentRepository)
+    public function setConfigs($configs)
     {
-        $this->contentRepository = $contentRepository;
+        $this->configs = $configs;
         return $this;
     }
 
     /**
-     *  Ön tanımlı değerleri atar
+     * @return array
      */
-    protected function setDefaultVars()
+    public function getFiles()
     {
-        $this->setConfigRepository( new ConfigRepository());
-        $this->setNameRepository( new FileNameRepository());
-        $this->setParamsRepository( new ParameterRepository());
+        return $this->files;
     }
+
+    /**
+     * @param array $files
+     * @return RepositoryManager
+     */
+    public function setFiles($files)
+    {
+        $this->files = $files;
+        return $this;
+    }
+
+
+    /**
+     * Yeni bir dosya ismi ekler
+     *
+     * @param string $name
+     * @return $this
+     */
+    public function addFile($name = '')
+    {
+        $this->files[] = $name;
+        return $this;
+    }
+
+
 }

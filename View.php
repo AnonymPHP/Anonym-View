@@ -14,47 +14,46 @@ namespace Anonym\Components\View;
  * Class View
  * @package Anonym\Components\View
  */
-class View
+class View extends RepositoryManager implements ViewAssignInterface, ViewExecuteInterface
 {
-
-    use DriverManager;
-
 
     /**
      * Sınıfı başlatır ve atamaları yapar
      *
+     * @param array $files
+     * @param array $configs
      */
-    public function __construct()
+    public function __construct($files = [], array $configs = [])
     {
+        if (!is_array($files)) {
+            $files = (array)$files;
+        }
+
+        $this->setFiles($files);
+        $this->setConfigs($configs);
+    }
+
+
+    /**
+     * Yeni veri ataması yapar
+     *
+     * @param string $name Veri ismi
+     * @param mixed $value Veriye atanacak değer
+     * @return mixed
+     */
+    public function assign($name = '', $value)
+    {
+        $this->addParameter($name, $value);
+        return $this;
     }
 
     /**
-     * Sürücü seçimi yapar
+     * Çıktıyı postolar
      *
-     * @param null $driver
-     * @return Driver
-     * @throws DriverException
+     * @return mixed
      */
-    public function driver($driver = null, array $configs = [])
+    public function execute()
     {
-
-        if (is_string($driver)) {
-
-            $list = $this->getDriverList();
-            if (isset($list[$driver])) {
-                $driver = $list[$driver];
-                $driver = new $driver($configs);
-            }
-
-            if($driver instanceof Driver)
-            {
-                return  $driver;
-            }else{
-                throw new DriverException(sprintf('%s sınıfınız geçerli bir sürücü değil', get_class($driver)));
-            }
-
-        }
-
+        // we do nothing
     }
-
 }

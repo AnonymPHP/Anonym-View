@@ -11,17 +11,10 @@
 namespace Anonym\Components\View;
 
 /**
- * Interface ContentRepositoryInterface
+ * Class PhpIncludeView
  * @package Anonym\Components\View
  */
-interface ContentRepositoryInterface
+class PhpIncludeView extends View implements ViewExecuteInterface
 {
-
-    /**
-     * İçeriği döndürür
-     *
-     * @return string
-     */
-    public function getContent();
 
 }
