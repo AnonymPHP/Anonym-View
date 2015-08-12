@@ -1,7 +1,7 @@
- Anonym-View
- ==========
+#Anonym-View
 
- Bu bileşende view dosyaları oluşturmayı öğreniyoruz.
+
+ Bu bileşende AnonymFramework de view dosyaları nasıl oluşturulduğunu öğreniyoruz.
 
 
 
