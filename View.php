@@ -57,6 +57,7 @@ class View extends RepositoryManager implements ViewAssignInterface
     protected function useConfigs($configs, $file)
     {
 
+        $this->setConfigs($configs);
         $this->setExt(isset($configs['ext']) ? $configs['ext'] : '.php');
         $this->setRoot(isset($configs['root']) ? $configs['root'] : VIEW);
 
