@@ -24,14 +24,17 @@ class SmartyView extends View implements ViewExecuteInterface
      * @var Smarty
      */
     private $smarty;
+
     /**
-     * Sınıfı başlatır ve ayarları kullanır
+     * Sınıfı başlatır ve dosya ve parametreleri kullanır
      *
-     * @param string $file
-     * @param array $configs
+     * @param string $file View dosyası adı
+     * @param array $configs Sınıfta kullanılacak ayalar
+     * @param array $paramaters View Dosyasına gönderilecek parametreler
      */
-    public function __construct($file = '', array $configs = [])
+    public function __construct($file, $configs = [], $paramaters = [])
     {
+        $this->setParameters($paramaters);
         $this->useConfigs($configs, $file);
         $this->useSmartyConfigs();
     }

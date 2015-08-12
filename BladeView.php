@@ -27,8 +27,16 @@ class BladeView extends View implements ViewExecuteInterface
     private $blade;
 
 
-    public function __construct($file, $configs = [])
+    /**
+     * Sınıfı başlatır ve dosya ve parametreleri kullanır
+     *
+     * @param string $file View dosyası adı
+     * @param array $configs Sınıfta kullanılacak ayalar
+     * @param array $paramaters View Dosyasına gönderilecek parametreler
+     */
+    public function __construct($file, $configs = [], $paramaters = [])
     {
+        $this->setParameters($paramaters);
         $this->useBladeConfigs($configs, $file);
     }
 
