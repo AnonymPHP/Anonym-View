@@ -71,12 +71,17 @@ class SmartyView extends View implements ViewExecuteInterface
     }
 
     /**
-     * Smarty e çıktıyı yollar
+     * Çıktıyı postolar
      *
-     * @return string
+     * @param array|null $parameters Sınıfa gönderilecek değerleri tutar
+     * @return mixed
      */
-    public function execute()
+    public function execute(array $parameters = null)
     {
+        if (!is_null($parameters)) {
+            $this->setParameters($parameters);
+        }
+
         $smarty = $this->getSmarty();
         $params = $this->getParameters();
         $files = $this->getFiles();

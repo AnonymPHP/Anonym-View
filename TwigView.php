@@ -41,10 +41,15 @@ class TwigView extends View implements ViewExecuteInterface
     /**
      * Çıktıyı postolar
      *
+     * @param array|null $parameters Sınıfa gönderilecek değerleri tutar
      * @return mixed
      */
-    public function execute()
+    public function execute(array $parameters = null)
     {
+        if (!is_null($parameters)) {
+            $this->setParameters($parameters);
+        }
+
         $loader = new Twig_Loader_Filesystem($this->getRoot() . DIRECTORY_SEPARATOR);
         $configs = isset($this->getConfigs()['twig']) ? $this->getConfigs()['twig'] : [];
         $this->setTwig(new Twig_Environment($loader, $configs));

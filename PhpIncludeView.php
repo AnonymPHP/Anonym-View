@@ -30,12 +30,17 @@ class PhpIncludeView extends View implements ViewExecuteInterface
 
 
     /**
-     * Çıktıyı postalar
+     * Çıktıyı postolar
      *
-     * @return string
+     * @param array|null $parameters Sınıfa gönderilecek değerleri tutar
+     * @return mixed
      */
-    public function execute()
+    public function execute(array $parameters = null)
     {
+        if (!is_null($parameters)) {
+            $this->setParameters($parameters);
+        }
+
         $files = $this->getFiles();
 
         if (count($files)) {

@@ -54,10 +54,15 @@ class BladeView extends View implements ViewExecuteInterface
     /**
      * Çıktıyı postolar
      *
+     * @param array|null $parameters Sınıfa gönderilecek değerleri tutar
      * @return mixed
      */
-    public function execute()
+    public function execute(array $parameters = null)
     {
+        if (!is_null($parameters)) {
+            $this->setParameters($parameters);
+        }
+
         $parameters = $this->getParameters();
         $files = $this->getFiles();
         $blade = $this->getBlade();
