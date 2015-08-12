@@ -71,3 +71,24 @@ TwigView
 Twig için özel yapılandırma ayalarınızı 'twig' dizisi içinde girebilirsiniz, detaylı twig kullanımı için
 twig in kendi dökümantasyonlarından faydalanabilirsiniz.
 
+
+---------------
+
+BladeView
+------------
+
+
+```php
+$blade = new \Anonym\Components\View\BladeView('index', [
+    'blade' => [
+        'view' => 'View', // view dosyası yolu
+        'cache' => 'Cache' // önbellek dosyalarının tutulacağı yol
+    ]
+]);
+
+$content = $blade->execute();
+
+```
+
+Bu kısımda laravel in blade'in kullanımı vardır, detaylı kullanım için laravel dökümantasyonlarına bakınız
+
