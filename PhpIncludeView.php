@@ -48,7 +48,6 @@ class PhpIncludeView extends View implements ViewExecuteInterface
             foreach ($files as $file) {
 
                 $file = $this->getRoot() . DIRECTORY_SEPARATOR . $file . $this->getExt();
-                var_dump($file);
                 if (file_exists($file)) {
                     include $file;
                 }
