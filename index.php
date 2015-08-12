@@ -24,3 +24,5 @@ $view = new \Anonym\Components\View\PhpIncludeView('index', $configs);
 $view = new \Anonym\Components\View\TwigView('index', $configs);
 $view->assign('test', 'aaa');
 echo $view->execute();
+
+///
