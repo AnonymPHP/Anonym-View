@@ -92,3 +92,21 @@ $content = $blade->execute();
 
 Bu kısımda laravel in blade'in kullanımı vardır, detaylı kullanım için laravel dökümantasyonlarına bakınız
 
+
+--------------------
+
+Header ve Footer Dosyalarını aktif etmek
+
+```php
+
+'header => [
+     'header','sidebar'
+     ],
+     'footer' => [
+     'footer','js',
+     ],
+
+```
+
+Ayarların içine ekleyeceğiniz bu satırlar işinize yarayacaktır.
+
