@@ -11,9 +11,16 @@ ob_start();
 
 include 'vendor/autoload.php';
 
-$view = new \Anonym\Components\View\PhpIncludeView('index', [
+$configs = [
     'root' => 'View',
     'ext' => '.php',
-]);
+];
 
-var_dump($view->execute());
+//
+$view = new \Anonym\Components\View\PhpIncludeView('index', $configs);
+
+//
+
+$view = new \Anonym\Components\View\TwigView('index', $configs);
+$view->assign('test', 'aaa');
+echo $view->execute();

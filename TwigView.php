@@ -46,12 +46,13 @@ class TwigView extends View implements ViewExecuteInterface
     public function execute()
     {
         $loader = new Twig_Loader_Filesystem($this->getRoot() . DIRECTORY_SEPARATOR);
-        $this->setTwig(new Twig_Environment($loader, $this->getConfigs()['twig']));
+        $configs = isset($this->getConfigs()['twig']) ? $this->getConfigs()['twig'] : [];
+        $this->setTwig(new Twig_Environment($loader, $configs));
         $content = '';
 
         if (count($this->getFiles())) {
             foreach ($this->getFiles() as $file) {
-                $content .= $this->getTwig()->render($file, $this->getParameters());
+                $content .= $this->getTwig()->render($file . $this->getExt(), $this->getParameters());
             }
         }
 
