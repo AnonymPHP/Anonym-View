@@ -3,7 +3,17 @@
 
  Bu bileşende AnonymFramework de view dosyaları nasıl oluşturulduğunu öğreniyoruz.
 
+ -----------------
 
+ Bu bileşen çalışmak için `VIEW` isimli bir  sabite ihtiyaç duyar.
+
+ ```php
+
+ define('VIEW', 'viewDosyalarınınbulunacağıkonum');
+
+ ```
+
+--------------------
 
  PhpIncludeView
  --------------
