@@ -17,6 +17,7 @@ namespace Anonym\Components\View;
 class View extends RepositoryManager implements ViewAssignInterface
 {
 
+
     /**
      * Sınıfı başlatır ve atamaları yapar
      *
@@ -53,8 +54,12 @@ class View extends RepositoryManager implements ViewAssignInterface
      * @param array $configs
      * @param string $file
      */
-    protected function useConfigsWithMasters($configs, $file)
+    protected function useConfigs($configs, $file)
     {
+
+        $this->setExt(isset($configs['ext']) ? $configs['ext'] : '.php');
+        $this->setRoot(isset($configs['root']) ? $configs['root'] : VIEW);
+
         $this->setConfigs($configs);
         if (isset($configs['header'])) {
             $master = $configs['header'];

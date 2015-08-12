@@ -18,6 +18,20 @@ class RepositoryManager
 {
 
     /**
+     * Kullanılacak uzantı
+     *
+     * @var string
+     */
+    private $ext;
+
+    /**
+     * Dosyaların bulunacağı konum
+     *
+     * @var string
+     */
+    private $root;
+
+    /**
      * Gönderilecek parametreleri tutar
      *
      * @var array
@@ -118,6 +132,43 @@ class RepositoryManager
         $this->files[] = $name;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getExt()
+    {
+        return $this->ext;
+    }
+
+    /**
+     * @param string $ext
+     * @return RepositoryManager
+     */
+    public function setExt($ext)
+    {
+        $this->ext = $ext;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRoot()
+    {
+        return $this->root;
+    }
+
+    /**
+     * @param string $root
+     * @return RepositoryManager
+     */
+    public function setRoot($root)
+    {
+        $this->root = $root;
+        return $this;
+    }
+
 
 
 }
