@@ -27,7 +27,7 @@ class PhpIncludeView extends View implements ViewExecuteInterface
     public function __construct($file, $configs = [], $paramaters = [])
     {
         $this->setParameters($paramaters);
-        $this->useConfigs($configs, $fileName);
+        $this->useConfigs($configs, $file);
     }
 
 

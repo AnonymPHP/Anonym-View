@@ -7,7 +7,6 @@
  *
  */
 
-
 namespace Anonym\Components\View;
 use Exception;
 
