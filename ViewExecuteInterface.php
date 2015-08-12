@@ -20,7 +20,8 @@ interface ViewExecuteInterface
     /**
      * Çıktıyı postolar
      *
+     * @param array|null $parameters Sınıfa gönderilecek değerleri tutar
      * @return mixed
      */
-    public function execute();
+    public function execute(array $parameters = null);
 }

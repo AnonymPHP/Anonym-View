@@ -14,48 +14,70 @@ namespace Anonym\Components\View;
  * Class View
  * @package Anonym\Components\View
  */
-class View
+class View extends RepositoryManager implements ViewAssignInterface
 {
-
-    use  DriverManager;
 
 
     /**
      * Sınıfı başlatır ve atamaları yapar
      *
+     * @param array $files
+     * @param array $configs
      */
-    public function __construct()
+    public function __construct($files = [], array $configs = [])
     {
-        $this->setDefaultVars();
+        if (!is_array($files)) {
+            $files = (array)$files;
+        }
+
+        $this->setFiles($files);
+        $this->setConfigs($configs);
+    }
+
+
+    /**
+     * Yeni veri ataması yapar
+     *
+     * @param string $name Veri ismi
+     * @param mixed $value Veriye atanacak değer
+     * @return mixed
+     */
+    public function assign($name = '', $value = null)
+    {
+        if (is_string($name)) {
+            $this->addParameter($name, $value);
+        } elseif (is_array($name)) {
+            $this->setParameters($name);
+        }
+        return $this;
     }
 
     /**
-     * Sürücü seçimi yapar
+     * Ayaları kullanır
      *
-     * @param null $driver
-     * @return Driver
-     * @throws DriverException
+     * @param array $configs
+     * @param string $file
      */
-    public function driver($driver  = null, array $configs = [])
+    protected function useConfigs($configs, $file)
     {
 
-        if (is_string($driver)) {
+        $this->setConfigs($configs);
+        $this->setExt(isset($configs['ext']) ? $configs['ext'] : '.php');
+        $this->setRoot(isset($configs['root']) ? $configs['root'] : VIEW);
 
-            $list = $this->getDriverList();
-            if (isset($list[$driver])) {
-                $driver = $list[$driver];
-                $driver = new $driver($configs);
-            }
+        $this->setConfigs($configs);
+        if (isset($configs['header'])) {
+            $master = $configs['header'];
+        }
+        $master[] = $file;
 
-            if($driver instanceof Driver)
-            {
-                return  $driver;
-            }else{
-                throw new DriverException(sprintf('%s sınıfınız geçerli bir sürücü değil', get_class($driver)));
-            }
-
+        if (isset($configs['footer'])) {
+            $master = array_merge($master, $configs['footer']);
         }
 
+        $this->setFiles($master);
     }
 
 }
+
+
