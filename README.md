@@ -110,3 +110,28 @@ Header ve Footer Dosyalarını aktif etmek
 
 Ayarların içine ekleyeceğiniz bu satırlar işinize yarayacaktır.
 
+
+--------------------
+
+Sınıfları başlatırken 3.parametre olarak kullanılacak parametreleri girebilirsiniz.
+
+
+----------------------
+
+```php
+
+$view->assign([
+
+'parametre1' => 'parametre2'
+
+]);
+
+```
+
+------------------------
+
+
+```php
+
+$view->assign('parametre1', 'parametre2');
+```

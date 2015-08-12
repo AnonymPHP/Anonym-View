@@ -42,9 +42,13 @@ class View extends RepositoryManager implements ViewAssignInterface
      * @param mixed $value Veriye atanacak değer
      * @return mixed
      */
-    public function assign($name = '', $value)
+    public function assign($name = '', $value = null)
     {
-        $this->addParameter($name, $value);
+        if (is_string($name)) {
+            $this->addParameter($name, $value);
+        } elseif (is_array($name)) {
+            $this->setParameters($name);
+        }
         return $this;
     }
 
