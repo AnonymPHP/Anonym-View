@@ -10,8 +10,22 @@
 
 namespace Anonym\Components\View;
 
-
-class SmartyView
+/**
+ * Class SmartyView
+ * @package Anonym\Components\View
+ */
+class SmartyView extends View implements ViewExecuteInterface
 {
+
+    /**
+     * Sınıfı başlatır ve ayarları kullanır
+     *
+     * @param string $file
+     * @param array $configs
+     */
+    public function __construct($file = '', array $configs = [])
+    {
+
+    }
 
 }
