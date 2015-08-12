@@ -57,6 +57,5 @@ class PhpIncludeView extends View implements ViewExecuteInterface
         }
 
         return ob_get_clean();
-
     }
 }
