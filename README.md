@@ -33,6 +33,8 @@ $view->execute(); // return content
 
  Burada önemli olan dosya isimleri ve header vs isimlerinde .php vs uzantıları yazmamanız
 
+----------------
+
 TwigView
 --------
 
