@@ -34,6 +34,18 @@ class View extends RepositoryManager implements ViewAssignInterface
         $this->setConfigs($configs);
     }
 
+    /**
+     * register the languages
+     *
+     * @param string|array $language
+     * @return $this
+     */
+    public function language($language = '')
+    {
+        $language = (array)$language;
+
+
+    }
 
     /**
      * Yeni veri ataması yapar
@@ -64,6 +76,7 @@ class View extends RepositoryManager implements ViewAssignInterface
         $this->setConfigs($configs);
         $this->setExt(isset($configs['ext']) ? $configs['ext'] : '.php');
         $this->setRoot(isset($configs['root']) ? $configs['root'] : VIEW);
+        $this->setLanguagePath($configs['language']) ? $configs['language'] : LANGUAGE;
 
         $this->setConfigs($configs);
         if (isset($configs['header'])) {

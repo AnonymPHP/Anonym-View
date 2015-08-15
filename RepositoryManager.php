@@ -16,7 +16,12 @@ namespace Anonym\Components\View;
  */
 class RepositoryManager
 {
-
+    /**
+     * Store the language files path
+     *
+     * @var string
+     */
+    private $languagePath = '';
     /**
      * Kullanılacak uzantı
      *
@@ -169,6 +174,22 @@ class RepositoryManager
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function getLanguagePath()
+    {
+        return $this->languagePath;
+    }
 
-
+    /**
+     * @param string $languagePath
+     * @return RepositoryManager
+     */
+    public function setLanguagePath($languagePath)
+    {
+        $this->languagePath = $languagePath;
+        return $this;
+    }
+    
 }
