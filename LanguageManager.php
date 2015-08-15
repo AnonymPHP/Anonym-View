@@ -31,11 +31,17 @@ class LanguageManager
      * get the language variables with file path
      *
      * @param string $file the file name
-     * @return array registered varibles on file
+     * @return array|bool registered varibles on file
      */
     public function getLanguage($file = '')
     {
+        $path = $this->path . $file . '.php';
 
+        if (file_exists($path)) {
+            $variables = require $path;
+            return $variables;
+        } else {
+            return false;
+        }
     }
-
 }
