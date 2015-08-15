@@ -17,7 +17,7 @@ namespace Anonym\Components\View;
  * Class LanguageManager
  * @package Anonym\Components\View
  */
-class LanguageManager
+class LanguageManager implements LanguageManagerInterface
 {
 
     /**
