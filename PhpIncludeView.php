@@ -28,12 +28,11 @@ class PhpIncludeView extends View implements ViewExecuteInterface
     {
         $this->setParameters($paramaters);
         $this->useConfigs($configs, $file);
-        parent::__construct();
     }
 
 
     /**
-     * Return the content
+     * Çıktıyı postolar
      *
      * @param array|null $parameters Sınıfa gönderilecek değerleri tutar
      * @return mixed
@@ -58,6 +57,5 @@ class PhpIncludeView extends View implements ViewExecuteInterface
         }
 
         return ob_get_clean();
-
     }
 }
