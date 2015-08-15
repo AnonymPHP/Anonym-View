@@ -44,7 +44,6 @@ class View extends RepositoryManager implements ViewAssignInterface
     {
         $language = (array)$language;
 
-
     }
 
     /**
