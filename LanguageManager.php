@@ -45,7 +45,7 @@ class LanguageManager implements LanguageManagerInterface
      */
     public function getLanguage($file = '')
     {
-        $path = $this->path . $file . '.php';
+        $path = $this->path . DIRECTORY_SEPARATOR . $file . '.php';
 
         if (file_exists($path)) {
             $variables = require $path;

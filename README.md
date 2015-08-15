@@ -135,3 +135,16 @@ $view->assign([
 
 $view->assign('parametre1', 'parametre2');
 ```
+
+
+Dil dosyaları,
+-------------
+
+```php
+
+$configs = [
+ 'language' => 'LanguageDir'
+];
+
+$view->language('tr/index');
+```
