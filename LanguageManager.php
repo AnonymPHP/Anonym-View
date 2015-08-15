@@ -28,6 +28,16 @@ class LanguageManager implements LanguageManagerInterface
     private $path;
 
     /**
+     * create a new instance and store the language files path
+     *
+     * @param string $path
+     */
+    public function __construct($path = '')
+    {
+        $this->path = $path;
+    }
+
+    /**
      * get the language variables with file path
      *
      * @param string $file the file name

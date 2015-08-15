@@ -32,10 +32,12 @@ class View extends RepositoryManager implements ViewAssignInterface
 
         $this->setFiles($files);
         $this->setConfigs($configs);
+        $this->setLanguageManager(new LanguageManager($this->getLanguagePath()));
+
     }
 
     /**
-     * register the languages
+     * get the language variables
      *
      * @param string|array $language
      * @return $this
@@ -43,7 +45,15 @@ class View extends RepositoryManager implements ViewAssignInterface
     public function language($language = '')
     {
         $language = (array)$language;
+        $parameters = $this->getParameters();
+        $new = [];
+        foreach ($language as $lang) {
+            $new[] = $this->getLanguageManager()->getLanguage($lang);
+        }
 
+        $parameters = array_merge($parameters, $new);
+        $this->setParameters($parameters);
+        return $this;
     }
 
     /**

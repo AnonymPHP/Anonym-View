@@ -16,6 +16,14 @@ namespace Anonym\Components\View;
  */
 class RepositoryManager
 {
+
+    /**
+     * the instance of language manager class
+     *
+     * @var LanguageManagerInterface
+     */
+    private $languageManager;
+
     /**
      * Store the language files path
      *
@@ -191,5 +199,25 @@ class RepositoryManager
         $this->languagePath = $languagePath;
         return $this;
     }
-    
+
+    /**
+     * @return LanguageManagerInterface
+     */
+    public function getLanguageManager()
+    {
+        return $this->languageManager;
+    }
+
+    /**
+     * @param LanguageManagerInterface $languageManager
+     * @return RepositoryManager
+     */
+    public function setLanguageManager(LanguageManagerInterface $languageManager)
+    {
+        $this->languageManager = $languageManager;
+        return $this;
+    }
+
+
+
 }
