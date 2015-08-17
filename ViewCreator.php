@@ -17,7 +17,7 @@ namespace Anonym\Components\View;
  * Class ViewCreator
  * @package Anonym\Components\View
  */
-class ViewCreator
+abstract class ViewCreator
 {
 
 }
