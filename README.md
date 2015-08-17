@@ -142,9 +142,14 @@ Dil dosyaları,
 
 ```php
 
+
+
 $configs = [
  'language' => 'LanguageDir'
 ];
+// or
+
+define('LANGUAGE', 'LanguageDir');
 
 $view->language('tr/index');
 ```
