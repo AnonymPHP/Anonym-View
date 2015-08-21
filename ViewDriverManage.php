@@ -17,4 +17,27 @@ namespace Anonym\Components\View;
 class ViewDriverManager
 {
 
+    /**
+     * the repository of drivers
+     *
+     * @var array
+     */
+    private $driverList;
+
+
+    /**
+     * create a new instance and register the driver list
+     *
+     */
+    public function __construct()
+    {
+        $this->driverList = [
+            'smarty' => SmartyView::class,
+            'twig' => TwigView::class,
+            'file' => PhpIncludeView::class,
+            'blade' => BladeView::class
+        ];
+    }
+
+
 }
