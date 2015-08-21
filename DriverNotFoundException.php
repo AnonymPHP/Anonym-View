@@ -9,7 +9,7 @@
  */
 
 namespace Anonym\Components\View;
-
+use Exception;
 
 class DriverNotFoundException
 {
