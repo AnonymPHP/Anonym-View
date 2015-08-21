@@ -11,6 +11,10 @@
 namespace Anonym\Components\View;
 use Exception;
 
+/**
+ * Class DriverNotFoundException
+ * @package Anonym\Components\View
+ */
 class DriverNotFoundException
 {
 
