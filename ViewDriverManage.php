@@ -39,5 +39,10 @@ class ViewDriverManager
         ];
     }
 
+    public function driver($name = 'file',array $configs = [])
+    {
+
+    }
+
 
 }
