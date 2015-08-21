@@ -15,11 +15,11 @@ use Exception;
  * Class DriverNotFoundException
  * @package Anonym\Components\View
  */
-class DriverNotFoundException
+class DriverNotFoundException extends Exception
 {
 
     public function __construct($message = '')
     {
-
+        $this->message = $message;
     }
 }
