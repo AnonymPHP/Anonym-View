@@ -46,6 +46,7 @@ class ViewDriverManager
      * @param string $file the file name
      * @param array $configs the configs of driver
      * @param array $parameters the variables of view
+     * @throws DriverNotFoundException
      * @return ViewExecuteInterface
      */
     public function driver($name = 'file', $file = '',array $configs = [], $parameters = [])
@@ -57,7 +58,7 @@ class ViewDriverManager
             $driver = new $driver($file, $configs, $parameters);
             return $driver;
         }else{
-
+            throw new DriverNotFoundException(sprintf('your %s driver is not found', $name));
         }
 
     }
