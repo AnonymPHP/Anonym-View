@@ -18,4 +18,8 @@ use Exception;
 class DriverNotFoundException
 {
 
+    public function __construct($message = '')
+    {
+
+    }
 }
