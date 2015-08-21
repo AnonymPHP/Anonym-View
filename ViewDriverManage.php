@@ -10,7 +10,10 @@
 
 namespace Anonym\Components\View;
 
-
+/**
+ * Class ViewDriverManager
+ * @package Anonym\Components\View
+ */
 class ViewDriverManager
 {
 
