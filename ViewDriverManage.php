@@ -39,8 +39,26 @@ class ViewDriverManager
         ];
     }
 
-    public function driver($name = 'file',array $configs = [])
+    /**
+     * select the driver
+     *
+     * @param string $name the name of driver
+     * @param string $file the file name
+     * @param array $configs the configs of driver
+     * @param array $parameters the variables of view
+     * @return ViewExecuteInterface
+     */
+    public function driver($name = 'file', $file = '',array $configs = [], $parameters = [])
     {
+        $list = $this->driverList;
+
+        if (isset($list[$name])) {
+            $driver = $list[$name];
+            $driver = new $driver($file, $configs, $parameters);
+            return $driver;
+        }else{
+
+        }
 
     }
 
