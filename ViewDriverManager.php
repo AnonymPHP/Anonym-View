@@ -60,8 +60,5 @@ class ViewDriverManager
         }else{
             throw new DriverNotFoundException(sprintf('your %s driver is not found', $name));
         }
-
     }
-
-
 }
