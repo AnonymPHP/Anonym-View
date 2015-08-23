@@ -53,6 +53,7 @@ class View extends RepositoryManager implements ViewAssignInterface, ArrayAccess
         }
          $this->setParameters($parameters);
          $this->useConfigs($this->getConfigs(), $file);
+        return $this;
     }
     /**
      * get the language variables
