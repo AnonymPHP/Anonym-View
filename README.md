@@ -153,3 +153,14 @@ define('LANGUAGE', 'LanguageDir');
 
 $view->language('tr/index');
 ```
+
+#DriverManager
+
+```php
+
+$manager = new ViewDriverManager();
+$view = $manager->driver('file'); // twig, smarty, blade
+
+$view->make('index', ['test' => 'hello world']);
+
+```
