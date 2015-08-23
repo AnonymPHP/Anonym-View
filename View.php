@@ -39,6 +39,22 @@ class View extends RepositoryManager implements ViewAssignInterface, ArrayAccess
     }
 
     /**
+     * create a new instance
+     *
+     * @param string $file
+     * @param array $parameters
+     * @return $this
+     */
+    public function make($file = '', $parameters = [])
+    {
+        if(is_object($parameters))
+        {
+            $parameters = (array) $parameters;
+        }
+         $this->setParameters($parameters);
+         $this->useConfigs($this->getConfigs(), $file);
+    }
+    /**
      * get the language variables
      *
      * @param string|array $language
