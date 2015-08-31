@@ -34,7 +34,7 @@ class TwigView extends View implements ViewExecuteInterface
      * @param array $configs Sınıfta kullanılacak ayalar
      * @param array $paramaters View Dosyasına gönderilecek parametreler
      */
-    public function __construct($file, $configs = [], $paramaters = [])
+    public function __construct($file = '', $configs = [], $paramaters = [])
     {
         $this->setParameters($paramaters);
         $this->useConfigs($configs, $file);
