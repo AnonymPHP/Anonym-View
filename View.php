@@ -104,7 +104,7 @@ class View extends RepositoryManager implements ViewAssignInterface, ArrayAccess
         $this->setConfigs($configs);
         $this->setExt(isset($configs['ext']) ? $configs['ext'] : '.php');
         $this->setRoot(isset($configs['root']) ? $configs['root'] : VIEW);
-        $this->setLanguagePath($configs['language']) ? $configs['language'] : LANGUAGE;
+        $this->setLanguagePath(isset($configs['language']) ? $configs['language'] : LANGUAGE);
 
         $this->setConfigs($configs);
         if (isset($configs['header'])) {
