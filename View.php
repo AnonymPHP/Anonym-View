@@ -67,8 +67,9 @@ class View extends RepositoryManager implements ViewAssignInterface, ArrayAccess
         $parameters = $this->getParameters();
         $new = [];
         foreach ($language as $lang) {
-            $new[] = $this->getLanguageManager()->getLanguage($lang);
+            $new =  array_merge($new,$this->getLanguageManager()->getLanguage($lang));
         }
+
 
         $parameters = array_merge($parameters, $new);
         $this->setParameters($parameters);
