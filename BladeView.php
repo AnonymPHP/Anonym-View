@@ -10,7 +10,6 @@
 
 namespace Anonym\Components\View;
 
-use Philo\Blade\Blade;
 
 /**
  * Class BladeView
@@ -38,6 +37,8 @@ class BladeView extends View implements ViewExecuteInterface
     {
         $this->setParameters($paramaters);
         $this->useBladeConfigs($configs, $file);
+
+
     }
 
     /**
