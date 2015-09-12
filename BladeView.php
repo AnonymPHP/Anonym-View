@@ -80,7 +80,7 @@ class BladeView extends View implements ViewExecuteInterface
 
         if (count($files)) {
             foreach ($files as $file) {
-                $content .= $blade->view()->make($file, $parameters);
+                $content .= $blade->view()->make($file)->with($parameters)->render();
             }
         }
 
