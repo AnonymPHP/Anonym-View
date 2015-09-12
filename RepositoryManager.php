@@ -187,7 +187,7 @@ class RepositoryManager
      */
     public function getLanguagePath()
     {
-        return $this->languagePath instanceof LanguageManager ? $this->languageManager : new LanguageManager($this->getLanguagePath());
+        return $this->languagePath;
     }
 
     /**
@@ -205,7 +205,7 @@ class RepositoryManager
      */
     public function getLanguageManager()
     {
-        return $this->languageManager;
+        return $this->languageManager instanceof LanguageManager ? $this->languageManager : new LanguageManager($this->getLanguagePath());
     }
 
     /**
