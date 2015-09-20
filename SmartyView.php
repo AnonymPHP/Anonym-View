@@ -11,6 +11,7 @@
 namespace Anonym\Components\View;
 
 use Smarty;
+
 /**
  * Class SmartyView
  * @package Anonym\Components\View
@@ -100,7 +101,7 @@ class SmartyView extends View implements ViewExecuteInterface
 
         if (count($files)) {
             foreach ($files as $file) {
-                $content .= $smarty->fetch($file . $this->getExt());
+                $content .= $smarty->fetch($file . 'smarty.' . $this->getExt());
             }
         }
 
@@ -108,6 +109,14 @@ class SmartyView extends View implements ViewExecuteInterface
         return $content;
     }
 
+
+    /**
+     * @param string $name
+     * @return string
+     */
+    protected function getNameForDriver($name){
+        return $name.'.smary'.$this->getExt();
+    }
     /**
      * @return Smarty
      */
