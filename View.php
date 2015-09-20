@@ -121,6 +121,23 @@ class View extends RepositoryManager implements ViewAssignInterface, ArrayAccess
     }
 
     /**
+     * @param string $name
+     * @return string
+     */
+    protected function getNameForDriver($name){
+        return $name.$this->getExt();
+    }
+
+    /**
+     * check file is exists
+     *
+     * @param string $name
+     * @return bool
+     */
+    public function exists($name){
+         return file_exists($this->getRoot().$this->getNameForDriver($name));
+    }
+    /**
      * Whether a offset exists
      * @link http://php.net/manual/en/arrayaccess.offsetexists.php
      * @param mixed $offset <p>
