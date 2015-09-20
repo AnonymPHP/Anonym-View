@@ -135,7 +135,7 @@ class View extends RepositoryManager implements ViewAssignInterface, ArrayAccess
      * @return bool
      */
     public function exists($name){
-         return file_exists($this->getRoot().$this->getNameForDriver($name));
+         return file_exists($this->getRoot().DIRECTORY_SEPARATOR.$this->getNameForDriver($name));
     }
     /**
      * Whether a offset exists
