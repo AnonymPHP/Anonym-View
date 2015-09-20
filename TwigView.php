@@ -59,7 +59,7 @@ class TwigView extends View implements ViewExecuteInterface
 
         if (count($this->getFiles())) {
             foreach ($this->getFiles() as $file) {
-                $content .= $this->getTwig()->render($file . $this->getExt(), $this->getParameters());
+                $content .= $this->getTwig()->render($this->getNameForDriver($file),$this->getParameters());
             }
         }
 
@@ -67,6 +67,13 @@ class TwigView extends View implements ViewExecuteInterface
 
     }
 
+    /**
+     * @param string $name
+     * @return string
+     */
+    protected function getNameForDriver($name){
+        return $name.'.twig'.$this->getExt();
+    }
     /**
      * @return Twig_Environment
      */
