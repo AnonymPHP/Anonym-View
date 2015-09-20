@@ -101,7 +101,7 @@ class SmartyView extends View implements ViewExecuteInterface
 
         if (count($files)) {
             foreach ($files as $file) {
-                $content .= $smarty->fetch($file . 'smarty.' . $this->getExt());
+                $content .= $smarty->fetch($this->getNameForDriver($file));
             }
         }
 
