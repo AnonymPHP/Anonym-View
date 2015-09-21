@@ -93,6 +93,17 @@ class View extends RepositoryManager implements ViewAssignInterface, ArrayAccess
         return $this;
     }
 
+
+    /**
+     * replace . to /
+     *
+     * @param string $name
+     * @return mixed
+     */
+    protected function buildName($name){
+        return str_replace('.', '/', $name);
+    }
+
     /**
      * Ayaları kullanır
      *

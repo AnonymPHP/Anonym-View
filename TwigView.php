@@ -72,7 +72,7 @@ class TwigView extends View implements ViewExecuteInterface
      * @return string
      */
     protected function getNameForDriver($name){
-        return $name.'.twig'.$this->getExt();
+        return $this->buildName($name).'.twig'.$this->getExt();
     }
     /**
      * @return Twig_Environment
