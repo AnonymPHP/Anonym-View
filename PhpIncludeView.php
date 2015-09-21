@@ -58,4 +58,14 @@ class PhpIncludeView extends View implements ViewExecuteInterface
 
         return ob_get_clean();
     }
+
+    /**
+     * create a new instance
+     *
+     * @param string $name
+     * @return bool
+     */
+    public function exists($name){
+        return file_exists($this->getRoot(). DIRECTORY_SEPARATOR. $this->buildName($name).$this->getExt());
+    }
 }
