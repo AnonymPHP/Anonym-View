@@ -115,7 +115,7 @@ class SmartyView extends View implements ViewExecuteInterface
      * @return string
      */
     protected function getNameForDriver($name){
-        return $name.'.smary'.$this->getExt();
+        return $this->buildName($name).'.smary'.$this->getExt();
     }
     /**
      * @return Smarty
