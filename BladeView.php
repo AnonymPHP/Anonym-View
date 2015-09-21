@@ -106,4 +106,15 @@ class BladeView extends View implements ViewExecuteInterface
         unset($configs['blade']);
         $this->useConfigs($configs, $file);
     }
+
+    /**
+     * execute a method in laravel blade class
+     *
+     * @param string $method
+     * @param string $args
+     * @return mixed
+     */
+    public function __call($method, $args){
+        return call_user_func_array([$this->getBlade(), $method], $args);
+    }
 }
