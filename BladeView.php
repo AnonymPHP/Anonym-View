@@ -115,6 +115,6 @@ class BladeView extends View implements ViewExecuteInterface
      * @return mixed
      */
     public function __call($method, $args){
-        return call_user_func_array([$this->getBlade(), $method], $args);
+        return call_user_func_array([$this->getBlade()->view(), $method], $args);
     }
 }
