@@ -136,7 +136,7 @@ class View extends RepositoryManager implements ViewAssignInterface, ArrayAccess
      * @return string
      */
     protected function getNameForDriver($name){
-        return $this->buildName($name)..$this->getExt();
+        return $this->buildName($name).$this->getExt();
     }
 
     /**
