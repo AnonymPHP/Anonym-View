@@ -15,6 +15,8 @@ $view = new \Anonym\Components\View\View([
     'view'  => 'views'
 ]);
 
-$view->make('index');
+
+$factory = $view->make('index');
 
 
+var_dump($factory->render());

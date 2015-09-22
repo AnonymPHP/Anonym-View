@@ -40,13 +40,7 @@ class View extends Blade
      */
     public function __call($method, array $args)
     {
-        $response = call_user_func_array([$this->view(), $method], $args);
-
-        if(is_object($response)){
-            $this->instance = $response;
-        }
-
-        return $response;
+        return call_user_func_array([$this->instance, $method], $args);
     }
 
 }
