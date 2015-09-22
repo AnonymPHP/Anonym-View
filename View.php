@@ -32,6 +32,8 @@ class View extends Blade
     }
 
     /**
+     * if called method not found in this class, call it in view.
+     *
      * @param string $method
      * @param array $args
      * @return mixed
