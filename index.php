@@ -17,6 +17,3 @@ $view = new \Anonym\Components\View\View([
 
 
 $factory = $view->make('index');
-
-
-var_dump($factory->render());
