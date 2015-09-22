@@ -74,6 +74,11 @@ class Blade {
         $this->instance = $this->registerFactory();
     }
 
+    /**
+     * return the factory
+     *
+     * @return Factory|void
+     */
     public function view()
     {
         return $this->instance;

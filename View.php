@@ -31,6 +31,7 @@ class View extends Blade
         parent::__construct($view, $cache);
     }
 
+
     /**
      * if called method not found in this class, call it in view.
      *
